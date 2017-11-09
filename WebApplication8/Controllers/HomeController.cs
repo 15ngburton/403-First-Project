@@ -14,7 +14,8 @@ namespace WebApplication8.Controllers
         public ActionResult Index()
         {
             missionList.Add(new Missions() { id = 1, missionName = "England London Mission", missionPresidentName = "Mark Stevenson", missionAddress = "380 S. Piccadily Way, London, UK 483703", missionLanguage = "English", missionClimate = "Cold", dominantReligion = "Church of England", imgFileName = "" });
-
+            missionList.Add(new Missions() { id = 2, missionName = "Burchev Albania Mission", missionPresidentName = "Gerald Carol", missionAddress = "P.O. Box 278 37th Steet Post Office, Albania", missionLanguage = "Albanian", missionClimate = "Temparate", dominantReligion = "Christian Orthodox", imgFileName = "" });
+            missionList.Add(new Missions() { id = 3, missionName = "Brasilia Brasil Mission", missionPresidentName = "Guiermo Fracucci", missionAddress = "3785 Palace Way, Brasilia, Brazil", missionLanguage = "Portuguese", missionClimate = "Rainy", dominantReligion = "Catholic", imgFileName = "" });
             return View();
         }
 
