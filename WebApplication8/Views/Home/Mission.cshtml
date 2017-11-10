@@ -3,7 +3,33 @@
     ViewBag.Title = "Mission";
 }
 
-<h2>Mission</h2>
+<head>
+    <link rel="stylesheet" href="~/Content/CustomStyles.css" />
+</head>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container-fluid">
+        <br />
+        <br />
+        <h1 style="color: white;">MissionConnect Missions</h1>
+        <p class="lead"></p>
+    </div>
+</div>
+<p class="lead">Please Choose Your Mission:</p>
+<!--Here's a neat looking dropdown.. It doesn't function yet but we will add that later.-->
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Dropdown Example
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="#">Nevada Las Vegas Mission</a></li>
+        <li><a href="#">Taiwan Taipei Mission</a></li>
+        <li><a href="#">England London Mission</a></li>
+    </ul>
+</div>
+<!--Jared Added this. I don't know if we need breadcrumbs here?-->
+<br />
+<p class="lead"><em>"An assignment to labor in a specific place is essential and important but secondary to a call to the work."</em> - Elder David A. Bednar</p>
 
 <nav class="breadcrumb">
     <a class="breadcrumb-item" href="#">Nevada Los Vegas Mission</a>
