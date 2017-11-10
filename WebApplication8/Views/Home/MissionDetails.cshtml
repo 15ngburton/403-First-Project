@@ -1,0 +1,50 @@
+﻿
+<head>
+    <style>
+        img.missionBanner{
+            width:100%;
+        }
+        td.td1{
+            width:200px;
+            font-weight:bold;
+        }
+        td.td2{
+            width:500px;
+        }
+        tr{
+            margin: 5px 0px;
+        }
+    </style>
+</head>
+@{
+    ViewBag.Title = "MissionDetails";
+}
+
+<img src=@ViewBag.MissionClass.imgFileName alt="Mission Pic" class="missionBanner"/>
+
+<h2>MissionDetails</h2>
+
+<h3>@ViewBag.MissionClass.missionName</h3>
+
+<table>
+    <tr>
+        <td class="td1">President's Name:</td>
+        <td class="td2">@ViewBag.MissionClass.missionPresidentName</td>
+    </tr>
+    <tr>
+        <td class="td1">Address:</td>
+        <td>@ViewBag.MissionClass.missionAddress</td>
+    </tr>
+    <tr>
+        <td class="td1">Language:</td>
+        <td>@ViewBag.MissionClass.missionLanguage</td>
+    </tr>
+    <tr>
+        <td class="td1">Climate:</td>
+        <td>@ViewBag.MissionClass.missionClimate</td>
+    </tr>
+    <tr>
+        <td class="td1">Dominant Religion:</td>
+        <td>@ViewBag.MissionClass.dominantReligion</td>
+    </tr>
+</table>

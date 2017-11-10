@@ -19,9 +19,9 @@
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-        <li><a href="#">Nevada Las Vegas Mission</a></li>
-        <li><a href="#">Taiwan Taipei Mission</a></li>
-        <li><a href="#">England London Mission</a></li>
+       <li>@Html.ActionLink("Nevada Las Vegas Mission", "MissionDetails", "Home", new { menu = 1 }, null)</li>
+       <li>@Html.ActionLink("Taiwan Taipei Mission", "MissionDetails", "Home", new { menu = 2 }, null)</li>
+       <li>@Html.ActionLink("England London Mission", "MissionDetails", "Home", new { menu = 3 }, null)</li>
     </ul>
 </div>
 <br />

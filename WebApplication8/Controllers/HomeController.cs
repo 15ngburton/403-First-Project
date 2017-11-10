@@ -11,11 +11,16 @@ namespace WebApplication8.Controllers
     public class HomeController : Controller
     {
         static List<Missions> missionList = new List<Missions>();
+
         public ActionResult Index()
         {
-            missionList.Add(new Missions() { id = 1, missionName = "England London Mission", missionPresidentName = "Mark Stevenson", missionAddress = "380 S. Piccadily Way, London, UK 483703", missionLanguage = "English", missionClimate = "Cold", dominantReligion = "Church of England", imgFileName = "" });
-            missionList.Add(new Missions() { id = 2, missionName = "Burchev Albania Mission", missionPresidentName = "Gerald Carol", missionAddress = "P.O. Box 278 37th Steet Post Office, Albania", missionLanguage = "Albanian", missionClimate = "Temparate", dominantReligion = "Christian Orthodox", imgFileName = "" });
-            missionList.Add(new Missions() { id = 3, missionName = "Brasilia Brasil Mission", missionPresidentName = "Guiermo Fracucci", missionAddress = "3785 Palace Way, Brasilia, Brazil", missionLanguage = "Portuguese", missionClimate = "Rainy", dominantReligion = "Catholic", imgFileName = "" });
+            if (!missionList.Any())
+            {
+                missionList.Add(new Missions() { id = 1, missionName = "Nevada Las Vegas Mission", missionPresidentName = "Gerald Carol", missionAddress = "P.O. Box 278 37th Steet Post Office, Las Vegas, Nevada", missionLanguage = "English", missionClimate = "Hot and Dry", dominantReligion = "Atheist", imgFileName = "~/Content/lasVegas.jpg" });
+                missionList.Add(new Missions() { id = 2, missionName = "Taiwan Taipei Mission", missionPresidentName = "Xhang Cho", missionAddress = "3785 Palace Way, Taipei, Taiwan", missionLanguage = "Mandarin Chinese", missionClimate = "Humid", dominantReligion = "Buddhism", imgFileName = "" });
+                missionList.Add(new Missions() { id = 3, missionName = "England London Mission", missionPresidentName = "Mark Stevenson", missionAddress = "380 S. Piccadily Way, London, UK 483703", missionLanguage = "English", missionClimate = "Cold", dominantReligion = "Church of England", imgFileName = "" });
+            }
+
             return View();
         }
 
@@ -35,7 +40,12 @@ namespace WebApplication8.Controllers
 
         public ActionResult Mission()
         {
+            return View();
+        }
 
+        public ActionResult MissionDetails(int menu)
+        {
+            ViewBag.MissionClass = missionList[menu - 1];
             return View();
         }
     }
