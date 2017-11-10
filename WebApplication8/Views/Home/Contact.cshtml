@@ -1,17 +1,40 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h2>Contact Us</h2>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div class="row"  style="padding:10% 0%;">
+    <div class="col-xs-6">
+        <h3>Respect Your Elders</h3>
+        <address >
+            372 N 500 W<br />
+            Salt Lake City, UT 84029<br />
+            <abbr title="Phone">P:</abbr>
+            (801) 304 - 3928
+        </address>
+    </div>
+    <div class="col-xs-6">
+        @using (Html.BeginForm())
+        {
+            <p>
+                Name 
+                <br />
+                @Html.TextBox("Name")
+                <br />
+                <br />
+                Email
+                <br />
+                @Html.TextBox("Email")
+                <br />
+                <br />
+                Message
+                <br />
+                @Html.TextBox("Message1")
+                <br />
+                <br />
+                <input type="submit" value="Submit">
+            </p>
+    
+        }
+    </div>
+</div>
