@@ -77,12 +77,29 @@
         @{ 
             foreach(var item in ViewBag.QuestionList)
             {
+
                 <p><span style="font-weight:lighter; font-size:10px; color:gray;">@item.date</span>
                 <br />
                 <b style="font-size:18px;">@item.questionGiver</b>
                 <span style="font-size:16px;">@item.questionText</span></p>
             }
         }
+
+        <h3 style="text-align:center;">Ask A Question</h3>
+
+        @using (Html.BeginForm())
+        {
+            <p>
+                Your Name: <br />
+                @Html.TextBox("questionName")
+                <br /><br />
+                Question: <br />
+                @Html.TextArea("questionText")
+                <br /><br />
+                <input type="submit" value="Post">
+            </p>
+        }
+
     </div>
     <div class="col-xs-3">
     </div>
