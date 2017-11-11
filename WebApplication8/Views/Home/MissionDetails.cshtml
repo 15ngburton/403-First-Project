@@ -3,6 +3,7 @@
     <style>
         img.missionBanner{
             width:100%;
+            margin: auto;
         }
         td.td1{
             width:200px;
@@ -20,31 +21,48 @@
     ViewBag.Title = "MissionDetails";
 }
 
-<img src=@ViewBag.MissionClass.imgFileName alt="Mission Pic" class="missionBanner"/>
-
 <h2>MissionDetails</h2>
 
-<h3>@ViewBag.MissionClass.missionName</h3>
+<div class="row">
+    <div class="col-xs-6">
+        @{
+            if (@ViewBag.MissionClass.missionName == "Nevada Las Vegas Mission") {
+                <img src="~/Content/battleborn.png" alt="Mission Pic" class="missionBanner" />
+            }
+            else if (@ViewBag.MissionClass.missionName == "Taiwan Taipei Mission")
+            {
+                <img src="~/Content/taiwan.png" alt="Mission Pic" class ="missionBanner" />
+            }
+            else if (@ViewBag.MissionClass.missionName == "England London Mission")
+            {
+                <img src="~/Content/england.png" alt="Mission Pic" class="missionBanner"/>
+            }
+        }
+    </div>
+    <div class="col-xs-6">
+        <h3>@ViewBag.MissionClass.missionName</h3>
 
-<table>
-    <tr>
-        <td class="td1">President's Name:</td>
-        <td class="td2">@ViewBag.MissionClass.missionPresidentName</td>
-    </tr>
-    <tr>
-        <td class="td1">Address:</td>
-        <td>@ViewBag.MissionClass.missionAddress</td>
-    </tr>
-    <tr>
-        <td class="td1">Language:</td>
-        <td>@ViewBag.MissionClass.missionLanguage</td>
-    </tr>
-    <tr>
-        <td class="td1">Climate:</td>
-        <td>@ViewBag.MissionClass.missionClimate</td>
-    </tr>
-    <tr>
-        <td class="td1">Dominant Religion:</td>
-        <td>@ViewBag.MissionClass.dominantReligion</td>
-    </tr>
-</table>
+        <table>
+            <tr>
+                <td class="td1">President's Name:</td>
+                <td class="td2">@ViewBag.MissionClass.missionPresidentName</td>
+            </tr>
+            <tr>
+                <td class="td1">Address:</td>
+                <td>@ViewBag.MissionClass.missionAddress</td>
+            </tr>
+            <tr>
+                <td class="td1">Language:</td>
+                <td>@ViewBag.MissionClass.missionLanguage</td>
+            </tr>
+            <tr>
+                <td class="td1">Climate:</td>
+                <td>@ViewBag.MissionClass.missionClimate</td>
+            </tr>
+            <tr>
+                <td class="td1">Dominant Religion:</td>
+                <td>@ViewBag.MissionClass.dominantReligion</td>
+            </tr>
+        </table>
+    </div>
+</div>
