@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using static WebApplication8.Models.Mission;
 using static WebApplication8.Models.Question;
 using static WebApplication8.Models.Reply;
+using static WebApplication8.Models.QuestionReply;
 
 namespace WebApplication8.Controllers
 {
@@ -14,6 +15,9 @@ namespace WebApplication8.Controllers
     {
         static List<Missions> missionList = new List<Missions>();
         static Stack<Questions> questionStack = new Stack<Questions>();
+        static List<Replies> replyList = new List<Replies>();
+        static List<QuestionReplies> questionReplyList = new List<QuestionReplies>();
+
         static int menuSelection;
 
         public ActionResult Index()
@@ -27,9 +31,16 @@ namespace WebApplication8.Controllers
 
             if (!questionStack.Any())
             {
-                questionStack.Push(new Questions() { id = 1, questionGiver = "Jared Falke", questionText = "How can I best prepare spiritually to be a missionary?", date = new DateTime(2016, 5, 8, 22, 15, 8) });
-                questionStack.Push(new Questions() { id = 2, questionGiver = "Scott McFry", questionText = "Do I have to meet physical requirements to serve a mission?", date = new DateTime(2016, 12, 30, 12, 55, 22) });
-                questionStack.Push(new Questions() { id = 3, questionGiver = "Tyler Green", questionText = "What is a typical day for a missionary like?", date = new DateTime(2017, 8, 20, 15, 2, 17) });
+                replyList.Add(new Replies() { replyGiver = "Harold Carr", replyID = 1, replyText = "Read your scriptures and pray" });
+                replyList.Add(new Replies() { replyGiver = "Carol Harper", replyID = 2, replyText = "Yes" });
+                replyList.Add(new Replies() { replyGiver = "Karen Scharff", replyID = 3, replyText = "Look at the white handbook." });
+                questionReplyList.Add(new QuestionReplies { replyID = 1, questionID = 1 });
+                questionReplyList.Add(new QuestionReplies { replyID = 2, questionID = 2 });
+                questionReplyList.Add(new QuestionReplies { replyID = 3, questionID = 3 });
+                questionStack.Push(new Questions() { questionID = 1, questionGiver = "Jared Falke", questionText = "How can I best prepare spiritually to be a missionary?", date = new DateTime(2016, 5, 8, 22, 15, 8), replyID = 1 });
+                questionStack.Push(new Questions() { questionID = 2, questionGiver = "Scott McFry", questionText = "Do I have to meet physical requirements to serve a mission?", date = new DateTime(2016, 12, 30, 12, 55, 22), replyID = 2});
+                questionStack.Push(new Questions() { questionID = 3, questionGiver = "Tyler Green", questionText = "What is a typical day for a missionary like?", date = new DateTime(2017, 8, 20, 15, 2, 17), replyID = 3 });
+
             }
             
 
@@ -60,6 +71,8 @@ namespace WebApplication8.Controllers
         {
             ViewBag.QuestionList = questionStack;
             ViewBag.MissionClass = missionList[menu - 1];
+            ViewBag.ReplyList = replyList;
+            ViewBag.QuestionReplyList = questionReplyList;
             menuSelection = menu;
             return View();
         }
@@ -70,8 +83,10 @@ namespace WebApplication8.Controllers
             string qText = Request["questionText"];
             string qName = Request["questionName"];
             questionStack.Push(new Questions() { questionGiver = qName, questionText = qText, date = DateTime.Now });
+            ViewBag.ReplyList = replyList;
+            ViewBag.QuestionReplyList = questionReplyList;
             ViewBag.QuestionList = questionStack;
-            ViewBag.MissionClass = missionList[menuSelection];
+            ViewBag.MissionClass = missionList[menuSelection - 1];
             return View();
         }
     }

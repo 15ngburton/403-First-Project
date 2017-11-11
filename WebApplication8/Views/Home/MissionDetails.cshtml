@@ -75,14 +75,25 @@
         <br />
         <h2 style="text-align:center">Mission Q&A</h2>
         @{ 
-            foreach(var item in ViewBag.QuestionList)
+            foreach (var item in ViewBag.QuestionList)
             {
 
                 <p><span style="font-weight:lighter; font-size:10px; color:gray;">@item.date</span>
                 <br />
                 <b style="font-size:18px;">@item.questionGiver</b>
                 <span style="font-size:16px;">@item.questionText</span></p>
+                foreach (var replyItem in ViewBag.ReplyList)
+                {
+                    if (replyItem.replyID == item.replyID)
+                    {
+                        <b style="font-size:14px;">@replyItem.replyGiver </b>
+                        <span style="font-size:12px;">@replyItem.replyText </span>
+                    }
+                }
+                <br />
+                <br />
             }
+
         }
 
         <h3 style="text-align:center;">Ask A Question</h3>

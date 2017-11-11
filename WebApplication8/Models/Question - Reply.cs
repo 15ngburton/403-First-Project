@@ -7,18 +7,12 @@ using System.Web;
 
 namespace WebApplication8.Models
 {
-    public class Question
+    public class QuestionReply
     {
-
-        [Table("Question")]
-        public class Questions
+        [Table("QuestionReply")]
+        public class QuestionReplies
         {
-
-            [Key]
             public int questionID { get; set; }
-            public string questionGiver { get; set; }
-            public string questionText { get; set; }
-            public DateTime date { get; set; }
             public int replyID { get; set; }
         }
     }
