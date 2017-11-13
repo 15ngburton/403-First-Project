@@ -8,7 +8,11 @@
 }
 
 <br />
-<p>@Html.ActionLink("Home", "Index", "Home") - @Html.ActionLink("Mission", "Mission", "Home") - Mission_Details</p>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">@Html.ActionLink("Home", "Index", "Home")</li>
+    <li class="breadcrumb-item">@Html.ActionLink("Mission", "Mission", "Home")</li>
+    <li class="breadcrumb-item active">Mission Details</li>
+</ol>
 
 <h2>MissionDetails</h2>
 
