@@ -64,11 +64,7 @@ namespace WebApplication8.Controllers
         //Contact page
         public ActionResult Contact()
         {
-            List<SelectListItem> menuItems = new List<SelectListItem>();
-            menuItems.Add(new SelectListItem { Text = "Report a User", Value = "0" });
-            menuItems.Add(new SelectListItem { Text = "Report a Problem", Value = "1" });
-            menuItems.Add(new SelectListItem { Text = "Other", Value = "2"});
-            ViewBag.Menu = menuItems;
+            List<String> menuItems = new List<String>();
             return View();
         }
 

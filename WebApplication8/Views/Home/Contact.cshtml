@@ -27,28 +27,38 @@
         </address>
     </div>
     <div class="col-xs-6">
-        @using (Html.BeginForm())
-        {
-            <p>
-                Name 
+                @using (Html.BeginForm())
+                {
+                    <p>
+                        Name
+                        <br />
+                        @Html.TextBox("Name")
+                        <br />
+                        <br />
+                        Email
+                        <br />
+                        @Html.TextBox("Email")
+                        <br />
+                        <br />
+                        Subject
+                        <br />
+                        <fieldset>
+                            <select id="MovieType" name="MovieType">
+
+                                <option selected="selected" value="--Subject--"></option>
+
+                                <option value="0">Report a User</option>
+
+                                <option value="1">Report a Problem</option>
+
+                                <option value="2">Request a Feature</option>
+
+                                <option value="3">Other</option>
+
+                            </select>
+
+                    </fieldset>
                 <br />
-                @Html.TextBox("Name")
-                <br />
-                <br />
-                Email
-                <br />
-                @Html.TextBox("Email")
-                <br />
-                <br />
-                <button class="dropdown-toggle" type="button" data-toggle="dropdown">
-                    Subject
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li>Report a Problem</li>
-                    <li>Report a User</li>
-                    <li>Other</li>
-                </ul>
                 Message
                 <br />
                 @Html.TextArea("Message1")
