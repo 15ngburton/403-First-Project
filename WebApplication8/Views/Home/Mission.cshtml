@@ -6,6 +6,10 @@
 @{
     ViewBag.Title = "Mission";
 }
+
+<br />
+<p>@Html.ActionLink("Home", "Index", "Home") - Mission</p>
+
 <div class="jumbotron jumbotron-fluid">
     <div class="container-fluid">
         <br />
@@ -27,5 +31,3 @@
        <li>@Html.ActionLink("England London Mission", "MissionDetails", "Home", new { menu = 3 }, null)</li>
     </ul>
 </div>
-<br />
-<p>@Html.ActionLink("Home", "Index", "Home") - Mission</p>

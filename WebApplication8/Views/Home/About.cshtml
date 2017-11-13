@@ -5,6 +5,10 @@
 @{
     ViewBag.Title = "About";
 }
+
+<br />
+<p>@Html.ActionLink("Home", "Index", "Home") - About</p>
+
 <div class="row">
     <img src="~/Content/img/missionary-training-center-walk.jpg" class="missionaryBanner" />
     <h2>@ViewBag.Title</h2>
@@ -15,6 +19,4 @@
     <br />
     @Html.ActionLink("Check it Out", "Mission", "Home", null, new { @class = "btn btn-primary" })
     <br />
-    <br />
-    <p>@Html.ActionLink("Home", "Index", "Home") - About</p>
 </div>
