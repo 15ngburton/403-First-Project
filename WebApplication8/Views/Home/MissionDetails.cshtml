@@ -90,6 +90,14 @@
                         <span style="font-size:12px;">@replyItem.replyText </span>
                     }
                 }
+                using (Html.BeginForm())
+                {
+                    <span style="margin-right: 25%;">Name</span> <span>Reply</span>
+                        <br />
+                        @Html.TextBox("replyName") <span> </span>
+                        @Html.TextBox("replyBox")
+                        <input name ="submit" id ="Reply" type="submit" value="Reply">
+                }
                 <br />
                 <br />
             }
@@ -107,7 +115,7 @@
                 Question: <br />
                 @Html.TextArea("questionText")
                 <br /><br />
-                <input type="submit" value="Post">
+                <input name="submit" id ="submit" type="submit" value="Post" />
             </p>
         }
 

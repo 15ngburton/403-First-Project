@@ -78,15 +78,25 @@ namespace WebApplication8.Controllers
         }
 
         [HttpPost]
-        public ActionResult MissionDetails()
+        public ActionResult MissionDetails(string submit)
         {
-            string qText = Request["questionText"];
-            string qName = Request["questionName"];
-            questionStack.Push(new Questions() { questionGiver = qName, questionText = qText, date = DateTime.Now });
+            if (submit == "Post")
+            {
+                string qText = Request["questionText"];
+                string qName = Request["questionName"];
+                questionStack.Push(new Questions() { questionGiver = qName, questionText = qText, date = DateTime.Now });
+            }
+            else if (submit == "Reply")
+            {
+                string rText = Request["replyBox"];
+                string rName = Request["replyName"];
+                replyList.Add(new Replies { questionID = ViewBag.QuestionNumber, replyGiver = rName, replyText = rText });
+            }
             ViewBag.ReplyList = replyList;
             ViewBag.QuestionReplyList = questionReplyList;
             ViewBag.QuestionList = questionStack;
             ViewBag.MissionClass = missionList[menuSelection - 1];
+
             return View();
         }
     }
