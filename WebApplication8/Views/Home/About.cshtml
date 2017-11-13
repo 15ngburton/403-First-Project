@@ -5,9 +5,8 @@
 @{
     ViewBag.Title = "About";
 }
-
 <div class="row">
-    <img src="~/Content/missionary-training-center-walk.jpg" class="missionaryBanner" />
+    <img src="~/Content/img/missionary-training-center-walk.jpg" class="missionaryBanner" />
     <h2>@ViewBag.Title</h2>
     <h3>Respect Your Elders</h3>
     <p>Respect Your Elders is a company devoted to opening a dialogue between returned missionaries and prospective missionaries.
@@ -15,4 +14,7 @@
         of the mission to which they are assigned, prospective missionaries can better understand the missionary experience and better prepare for their best two years.</p>
     <br />
     @Html.ActionLink("Check it Out", "Mission", "Home", null, new { @class = "btn btn-primary" })
+    <br />
+    <br />
+    <p>@Html.ActionLink("Home", "Index", "Home") - About</p>
 </div>

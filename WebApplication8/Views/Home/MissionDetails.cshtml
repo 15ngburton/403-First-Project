@@ -14,15 +14,15 @@
         <!--Loads the mission flag-->
         @{
             if (@ViewBag.MissionClass.missionName == "Nevada Las Vegas Mission") {
-                <img src="~/Content/battleborn.png" alt="Mission Pic" class="missionBanner" />
+                <img src="~/Content/img/battleborn.png" alt="Mission Pic" class="missionBanner" />
             }
             else if (@ViewBag.MissionClass.missionName == "Taiwan Taipei Mission")
             {
-                <img src="~/Content/taiwan.png" alt="Mission Pic" class ="missionBanner" />
+                <img src="~/Content/img/taiwan.png" alt="Mission Pic" class ="missionBanner" />
             }
             else if (@ViewBag.MissionClass.missionName == "England London Mission")
             {
-                <img src="~/Content/england.png" alt="Mission Pic" class="missionBanner"/>
+                <img src="~/Content/img/england.png" alt="Mission Pic" class="missionBanner"/>
             }
         }
     </div>
@@ -110,3 +110,5 @@
     <div class="col-xs-3">
     </div>
 </div>
+<br />
+<p>@Html.ActionLink("Home", "Index", "Home") - @Html.ActionLink("Mission", "Mission", "Home") - Mission_Details</p>

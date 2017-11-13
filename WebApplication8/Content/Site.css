@@ -54,3 +54,9 @@ td.td2 {
 tr {
     margin: 5px 0px;
 }
+
+.jumbotron{
+    background-image:url("img/Bountiful_Temple_Moroni.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+}
