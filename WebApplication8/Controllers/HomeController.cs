@@ -27,9 +27,9 @@ namespace WebApplication8.Controllers
             //Load Mission Info if the missionList is empty
             if (!missionList.Any())
             {
-                missionList.Add(item: new Missions() { id = 1, missionName = "Nevada Las Vegas Mission", missionPresidentName = "Gerald Carol", missionAddress = "P.O. Box 278 37th Steet Post Office, Las Vegas, Nevada", missionLanguage = "English", missionClimate = "Hot and Dry", dominantReligion = "Atheist", imgLocation = Server.MapPath("~") + @"Content/battleborn.png" });
-                missionList.Add(new Missions() { id = 2, missionName = "Taiwan Taipei Mission", missionPresidentName = "Xhang Cho", missionAddress = "3785 Palace Way, Taipei, Taiwan", missionLanguage = "Mandarin Chinese", missionClimate = "Humid", dominantReligion = "Buddhism", imgLocation = "<img src='~/Content/lasVegas.jpg' alt = 'Mission Pic'>" });
-                missionList.Add(new Missions() { id = 3, missionName = "England London Mission", missionPresidentName = "Mark Stevenson", missionAddress = "380 S. Piccadily Way, London, UK 483703", missionLanguage = "English", missionClimate = "Cold", dominantReligion = "Church of England", imgLocation = "<img src='~/Content/lasVegas.jpg' alt = 'Mission Pic'>" });
+                missionList.Add(item: new Missions() { id = 1, missionName = "Nevada Las Vegas Mission", missionPresidentName = "Gerald Carol", missionAddress = "P.O. Box 278 37th Steet Post Office, Las Vegas, Nevada", missionLanguage = "English", missionClimate = "Hot and Dry", dominantReligion = "Atheist", imgFileName = "battleborn.png" });
+                missionList.Add(new Missions() { id = 2, missionName = "Taiwan Taipei Mission", missionPresidentName = "Xhang Cho", missionAddress = "3785 Palace Way, Taipei, Taiwan", missionLanguage = "Mandarin Chinese", missionClimate = "Humid", dominantReligion = "Buddhism", imgFileName = "taiwan.png" });
+                missionList.Add(new Missions() { id = 3, missionName = "England London Mission", missionPresidentName = "Mark Stevenson", missionAddress = "380 S. Piccadily Way, London, UK 483703", missionLanguage = "English", missionClimate = "Cold", dominantReligion = "Church of England", imgFileName = "england.png" });
             }
 
             //Load Questions Info if the questionStack is empty
@@ -64,6 +64,11 @@ namespace WebApplication8.Controllers
         //Contact page
         public ActionResult Contact()
         {
+            List<SelectListItem> menuItems = new List<SelectListItem>();
+            menuItems.Add(new SelectListItem { Text = "Report a User", Value = "0" });
+            menuItems.Add(new SelectListItem { Text = "Report a Problem", Value = "1" });
+            menuItems.Add(new SelectListItem { Text = "Other", Value = "2"});
+            ViewBag.Menu = menuItems;
             return View();
         }
 

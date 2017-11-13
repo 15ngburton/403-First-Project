@@ -14,24 +14,13 @@
     <li class="breadcrumb-item active">Mission Details</li>
 </ol>
 
+
 <h2>MissionDetails</h2>
 
 <div class="row">
     <div class="col-xs-6">
         <!--Loads the mission flag-->
-        @{
-            if (@ViewBag.MissionClass.missionName == "Nevada Las Vegas Mission") {
-                <img src="~/Content/img/battleborn.png" alt="Mission Pic" class="missionBanner" />
-            }
-            else if (@ViewBag.MissionClass.missionName == "Taiwan Taipei Mission")
-            {
-                <img src="~/Content/img/taiwan.png" alt="Mission Pic" class ="missionBanner" />
-            }
-            else if (@ViewBag.MissionClass.missionName == "England London Mission")
-            {
-                <img src="~/Content/img/england.png" alt="Mission Pic" class="missionBanner"/>
-            }
-        }
+        <img src="~/Content/img/@ViewBag.MissionClass.imgFileName" alt="Mission Pic" class="missionBanner" />  
     </div>
     <!--Loads the mission information-->
     <div class="col-xs-6">

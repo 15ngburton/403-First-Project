@@ -40,6 +40,15 @@
                 @Html.TextBox("Email")
                 <br />
                 <br />
+                <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+                    Subject
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>Report a Problem</li>
+                    <li>Report a User</li>
+                    <li>Other</li>
+                </ul>
                 Message
                 <br />
                 @Html.TextArea("Message1")

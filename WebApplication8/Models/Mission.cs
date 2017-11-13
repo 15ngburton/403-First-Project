@@ -23,7 +23,7 @@ namespace WebApplication8.Models
             public string missionClimate { get; set; }
             public string dominantReligion { get; set; }
             //This string should return an image
-            public string imgLocation { get; set; }
+            public string imgFileName { get; set; }
         }
     }
 }
