@@ -28,6 +28,7 @@
 
 <div class="row">
     <div class="col-xs-6">
+        <!--Loads the mission flag-->
         @{
             if (@ViewBag.MissionClass.missionName == "Nevada Las Vegas Mission") {
                 <img src="~/Content/battleborn.png" alt="Mission Pic" class="missionBanner" />
@@ -42,6 +43,7 @@
             }
         }
     </div>
+    <!--Loads the mission information-->
     <div class="col-xs-6">
         <h3>@ViewBag.MissionClass.missionName</h3>
 
@@ -72,6 +74,7 @@
 <div class="row">
     <div class="col-xs-3">
     </div>
+    <!--Loads the mission Q&A-->
     <div class="col-xs-6">
         <br />
         <h2 style="text-align:center">Mission Q&A</h2>

@@ -22,7 +22,8 @@ namespace WebApplication8.Models
             public string missionLanguage { get; set; }
             public string missionClimate { get; set; }
             public string dominantReligion { get; set; }
-            public HtmlString imgHtmlTag { get; set; }
+            //This string should return an image
+            public String imgHtmlTag { get; set; }
         }
     }
 }
