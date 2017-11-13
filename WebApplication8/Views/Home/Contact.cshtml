@@ -1,11 +1,18 @@
-﻿@{
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+</head>
+
+@{
     ViewBag.Title = "Contact";
 }
+
+<img src="~/Content/missionary-training-center-walk.jpg" class="missionaryBanner" />
+
 <h2>Contact Us</h2>
 
-<div class="row"  style="padding:10% 0%;">
-    <div class="col-xs-6">
-        <h3>Respect Your Elders</h3>
+<div class="row">
+    <div class="col-xs-6 contactRight">
+        <h3 class ="contactName">Respect Your Elders</h3>
         <address >
             372 N 500 W<br />
             Salt Lake City, UT 84029<br />
@@ -32,7 +39,7 @@
                 @Html.TextArea("Message1")
                 <br />
                 <br />
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" class="btn btn-primary">
             </p>
     
         }

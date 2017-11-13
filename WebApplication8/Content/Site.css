@@ -22,3 +22,35 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.missionaryBanner {
+    width: 100%;
+}
+
+.contactRight {
+    padding: 4% 0%;
+    text-align: center;
+}
+
+.contactName {
+    text-decoration: underline;
+}
+
+img.missionBanner {
+    width: 65%;
+    display: block;
+    margin: auto;
+}
+
+td.td1 {
+    width: 200px;
+    font-weight: bold;
+}
+
+td.td2 {
+    width: 500px;
+}
+
+tr {
+    margin: 5px 0px;
+}
