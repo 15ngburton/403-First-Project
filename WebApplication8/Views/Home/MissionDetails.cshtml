@@ -53,7 +53,7 @@
 <div class="row">
     <div class="col-xs-3">
     </div>
-    <!--Loads the mission Q&A-->
+    <!--Loads the mission Q& A-->
     <div class="col-xs-6">
         <br />
         <h2 style="text-align:center">Mission Q&A</h2>
@@ -65,22 +65,28 @@
                 <br />
                 <b style="font-size:18px;">@item.questionGiver</b>
                 <span style="font-size:16px;">@item.questionText</span></p>
+                
                 foreach (var replyItem in ViewBag.ReplyList)
                 {
                     if (replyItem.replyID == item.replyID)
                     {
-                        <b style="font-size:14px;">@replyItem.replyGiver </b>
-                        <span style="font-size:12px;">@replyItem.replyText </span>
+                    <b style="font-size:14px;">@replyItem.replyGiver </b>
+                    <span style="font-size:12px;">@replyItem.replyText </span>
+                        ViewBag.iCount = item.replyID;
                     }
                 }
-                using (Html.BeginForm())
-                {
-                    <span style="margin-right: 25%;">Name</span> <span>Reply</span>
+                <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#@ViewBag.iCount">Reply</button>
+                <div id="@ViewBag.iCount" class="collapse">
+                    @using (Html.BeginForm())
+                    {
+                        <span style="margin-right: 25%;">Name</span> <span>Reply</span>
                         <br />
                         @Html.TextBox("replyName") <span> </span>
                         @Html.TextBox("replyBox")
-                        <input name ="submit" id ="Reply" type="submit" value="Reply">
-                }
+                        <input name="submit" id="Reply" type="submit" value="Reply">
+
+                    }
+                </div>
                 <br />
                 <br />
             }

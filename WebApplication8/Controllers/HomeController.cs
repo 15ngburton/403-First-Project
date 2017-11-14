@@ -79,6 +79,9 @@ namespace WebApplication8.Controllers
         [HttpGet]
         public ActionResult MissionDetails(int menu)
         {
+            int iCount = 0;
+            ViewBag.iCount = iCount;
+
             loadMissionInfo();
             //Load data structures into viewbag
             ViewBag.QuestionList = questionStack;
